@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import PageIntro from "@/components/page-intro";
-import ProductsFeatured from "@/components/products-featured";
-import Subscribe from "@/components/subscribe";
+import AdSlotsFeatured from "@/components/add-featured";
+
 
 import Layout from "../layouts/Main";
 
@@ -103,10 +103,9 @@ const IndexPage = () => {
           </ul>
         </div>
       </section>
-
-      <ProductsFeatured />
-      {/* <Subscribe /> */}
-      {/* <Footer /> */}
+<AdSlotsFeatured />
+   
+      <Footer />
     </Layout>
   );
 };

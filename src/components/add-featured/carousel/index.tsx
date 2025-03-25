@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles (you might need to add this if not already included)
-import "swiper/css";
+// import "swiper/css";
 
 import type { AdSlot } from "@/types";
 
@@ -32,7 +32,7 @@ const AdSlotsCarousel: React.FC<AdSlotsCarouselType> = ({ adSlots }) => {
   if (!adSlots || adSlots.length === 0) return <div>No ad slots available</div>;
 
   return (
-    <div className="ad-slots-carousel">
+    <div className="products-carousel">
       <Swiper
         spaceBetween={spaceBetween}
         loop

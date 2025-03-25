@@ -6,7 +6,7 @@ const PageIntro = () => {
 
   return (
     <section className="page-intro">
-      <Swiper navigation effect="fade" className="swiper-wrapper">
+      {/* <Swiper navigation effect="fade" className="swiper-wrapper">
         <SwiperSlide>
           <div
             className="page-intro__slide"
@@ -40,7 +40,7 @@ const PageIntro = () => {
             </div>
           </div>
         </SwiperSlide>
-      </Swiper>
+      </Swiper> */}
 
       <div className="shop-data">
         <div className="container">
