@@ -1,4 +1,3 @@
-
 // The adSlots array above is already typed with this
 export const adSlots = [
   // Display Banners

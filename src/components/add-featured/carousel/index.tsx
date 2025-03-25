@@ -1,11 +1,5 @@
-// Import Swiper core and required components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles (you might need to add this if not already included)
-// import "swiper/css";
-
 import type { AdSlot } from "@/types";
-
 import AdSlotItem from "../../add-item";
 
 let slidesPerView = 1.3;
