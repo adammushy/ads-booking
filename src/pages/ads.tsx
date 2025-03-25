@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/breadcrumb";
-import Footer from "@/components/footer";
+// import Footer from "@/components/footer";
 import AdSlotsContent from "@/components/add-content"; // Previously updated as AdSlotsContent
 
 import Layout from "../layouts/Main";

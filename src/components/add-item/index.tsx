@@ -24,7 +24,7 @@ const AdSlotItem: React.FC<AdSlotItemProps> = ({
   contentType,
   rate,
   currency,
-  platform,
+//   platform,
   images,
 }) => {
   const dispatch = useDispatch();
