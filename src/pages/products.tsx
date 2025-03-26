@@ -4,7 +4,7 @@ import Layout from "../layouts/Main";
 
 const Products = () => (
   <Layout>
-    <Breadcrumb />
+    <Breadcrumb name="All Products" />
     <section className="products-page">
       <div className="container">
         {/* <ProductsFilter /> */}

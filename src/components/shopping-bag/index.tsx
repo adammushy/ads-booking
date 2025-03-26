@@ -1,28 +1,35 @@
+
 import Link from "next/link";
 import { useSelector } from "react-redux";
 
 import type { RootState } from "@/store";
+import type { AdSlotStoreType } from "@/types";
+import { priceFormat } from "@/utils/const-function"; // Import priceFormat for formatting rates
 
 import CheckoutStatus from "../checkout-status";
-import Item from "./item";
+import AdSlotCart from "./item"; // Renamed Item to AdSlotCart (assuming this is the updated component)
 
-const ShoppingCart = () => {
+const AdSlotCartPage = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
 
-  const priceTotal = () => {
-    let totalPrice = 0;
+  const totalCost = () => {
+    let total = 0;
     if (cartItems.length > 0) {
-      cartItems.map((item) => (totalPrice += item.rate * item.count));
+      cartItems.forEach((item: AdSlotStoreType) => {
+        total += item.rate * item.count;
+      });
     }
-
-    return totalPrice;
+    return total;
   };
+
+  // Get the currency from the first item (assuming all items use the same currency, TZS)
+  const currency = cartItems.length > 0 ? cartItems[0].currency : "TZS";
 
   return (
     <section className="cart">
       <div className="container">
         <div className="cart__intro">
-          <h3 className="cart__title">Shopping Cart</h3>
+          <h3 className="cart__title">Ad Slot Bookings</h3>
           <CheckoutStatus step="cart" />
         </div>
 
@@ -31,23 +38,23 @@ const ShoppingCart = () => {
             <table>
               <tbody>
                 <tr>
-                  <th style={{ textAlign: "left" }}>Product</th>
-                  <th>Color</th>
+                  <th style={{ textAlign: "left" }}>Ad Slot</th>
+                  <th>Platform</th>
                   <th>Size</th>
-                  <th>Ammount</th>
-                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Rate</th>
                   <th />
                 </tr>
 
-                {cartItems.map((item) => (
-                  <Item
+                {cartItems.map((item: AdSlotStoreType) => (
+                  <AdSlotCart
                     key={item.id}
                     id={item.id}
                     thumb={item.thumb}
-                    name={item.id}
-                    color={item.id}
-                    price={item.rate}
-                    size={item.category}
+                    category={item.category}
+                    platform={item.platform}
+                    rate={item.rate}
+                    currency={item.currency}
                     count={item.count}
                   />
                 ))}
@@ -55,12 +62,12 @@ const ShoppingCart = () => {
             </table>
           )}
 
-          {cartItems.length === 0 && <p>Nothing in the cart</p>}
+          {cartItems.length === 0 && <p>No ad slots in your cart</p>}
         </div>
 
         <div className="cart-actions">
-          <Link href="/products" className="cart__btn-back">
-            <i className="icon-left" /> Continue Shopping
+          <Link href="/ad-slots" className="cart__btn-back">
+            <i className="icon-left" /> Continue Browsing
           </Link>
           <input
             type="text"
@@ -70,7 +77,7 @@ const ShoppingCart = () => {
 
           <div className="cart-actions__items-wrapper">
             <p className="cart-actions__total">
-              Total cost <strong>${priceTotal().toFixed(2)}</strong>
+              Total cost <strong>{priceFormat(totalCost(), currency)}</strong>
             </p>
             <Link
               href="/cart/checkout"
@@ -85,4 +92,4 @@ const ShoppingCart = () => {
   );
 };
 
-export default ShoppingCart;
+export default AdSlotCartPage;

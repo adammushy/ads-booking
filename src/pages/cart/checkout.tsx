@@ -5,6 +5,8 @@ import CheckoutItems from "@/components/checkout/items";
 import CheckoutStatus from "@/components/checkout-status";
 import type { RootState } from "@/store";
 
+import { priceFormat } from "@/utils/const-function"; // Import priceFormat for formatting rates
+
 import Layout from "../../layouts/Main";
 
 const CheckoutPage = () => {
@@ -12,7 +14,8 @@ const CheckoutPage = () => {
     const { cartItems } = state.cart;
     let totalPrice = 0;
     if (cartItems.length > 0) {
-      cartItems.map((item) => (totalPrice += item.price * item.count));
+      // cartItems.map((item) => (totalPrice += item.price * item.count));
+      cartItems.map((item) => (totalPrice += item.rate * item.count));
     }
 
     return totalPrice;
@@ -140,27 +143,7 @@ const CheckoutPage = () => {
                 </ul>
               </div>
 
-              <div className="block">
-                <h3 className="block__title">Delivery method</h3>
-                <ul className="round-options round-options--two">
-                  <li className="round-item round-item--bg">
-                    <img src="/images/logos/inpost.svg" alt="Paypal" />
-                    <p>$20.00</p>
-                  </li>
-                  <li className="round-item round-item--bg">
-                    <img src="/images/logos/dpd.svg" alt="Paypal" />
-                    <p>$12.00</p>
-                  </li>
-                  <li className="round-item round-item--bg">
-                    <img src="/images/logos/dhl.svg" alt="Paypal" />
-                    <p>$15.00</p>
-                  </li>
-                  <li className="round-item round-item--bg">
-                    <img src="/images/logos/maestro.png" alt="Paypal" />
-                    <p>$10.00</p>
-                  </li>
-                </ul>
-              </div>
+              
             </div>
 
             <div className="checkout__col-2">
@@ -170,7 +153,7 @@ const CheckoutPage = () => {
 
                 <div className="checkout-total">
                   <p>Total cost</p>
-                  <h3>${priceTotal}</h3>
+                  <h3>{priceFormat(priceTotal)}</h3>
                 </div>
               </div>
             </div>

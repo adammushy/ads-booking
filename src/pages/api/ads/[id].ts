@@ -6,9 +6,9 @@ import adSlots from "../../../utils/data/ads";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const {
-    query: { pid },
+    query: { id },
   } = req;
 
-  const product = adSlots.find((x) => x.id === pid);
+  const product = adSlots.find((x) => x.id === id);
   res.status(200).json(product);
 };

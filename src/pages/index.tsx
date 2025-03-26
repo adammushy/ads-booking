@@ -50,6 +50,9 @@ const IndexPage = () => {
         </div>
       </section>
 
+  <AdSlotsFeatured />
+
+
       <section className="section">
         <div className="container">
           <header className="section__intro">
@@ -57,17 +60,7 @@ const IndexPage = () => {
           </header>
 
           <ul className="shop-data-items">
-            <li>
-              <i className="icon-shipping" />
-              <div className="data-item__content">
-                <h4>Free Shipping</h4>
-                <p>
-                  All purchases over $199 are eligible for free shipping via
-                  USPS First Class Mail.
-                </p>
-              </div>
-            </li>
-
+          
             <li>
               <i className="icon-payment" />
               <div className="data-item__content">
@@ -82,10 +75,9 @@ const IndexPage = () => {
             <li>
               <i className="icon-cash" />
               <div className="data-item__content">
-                <h4>Money-Back Guarantee</h4>
+                <h4>Money Value Guarantee</h4>
                 <p>
-                  If an item arrived damaged or you've changed your mind, you
-                  can send it back for a full refund.
+                Get high quality banners, ads and slots at the best price.
                 </p>
               </div>
             </li>
@@ -95,15 +87,13 @@ const IndexPage = () => {
               <div className="data-item__content">
                 <h4>Finest Quality</h4>
                 <p>
-                  Designed to last, each of our products has been crafted with
-                  the finest materials.
+                  We guarantee the best quality of our ads products and services.
                 </p>
               </div>
             </li>
           </ul>
         </div>
       </section>
-<AdSlotsFeatured />
    
       <Footer />
     </Layout>

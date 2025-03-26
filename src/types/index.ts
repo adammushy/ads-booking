@@ -56,6 +56,16 @@ export type AdSlot = {
   images: string[]; // New field for sample images
 };
 
+export type AdSlotStoreType = {
+  id: string;
+  category: string;
+  platform: string;
+  rate: number;
+  currency: string;
+  thumb: string;
+  count: number;
+};
+
 export type ProductTypeList = {
   id: string;
   name: string;

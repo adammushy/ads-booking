@@ -6,7 +6,7 @@ import Layout from "../layouts/Main";
 
 const AdSlots = () => (
   <Layout>
-    <Breadcrumb />
+    <Breadcrumb name={'All Ads'} />
     <section className="products-page">
       <div className="container">
         <AdSlotsContent />

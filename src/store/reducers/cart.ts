@@ -1,27 +1,25 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
-import type { ProductStoreType } from "@/types";
+import type { AdSlotStoreType } from "@/types";
 
 interface CartTypes {
-  cartItems: ProductStoreType[];
+  cartItems: AdSlotStoreType[];
 }
 
 const initialState = {
   cartItems: [],
 } as CartTypes;
 
-const indexSameProduct = (state: CartTypes, action: ProductStoreType) => {
-  const sameProduct = (product: ProductStoreType) =>
-    product.id === action.id &&
-    product.color === action.color &&
-    product.size === action.size;
+const indexSameAdSlot = (state: CartTypes, action: AdSlotStoreType) => {
+  const sameAdSlot = (adSlot: AdSlotStoreType) =>
+    adSlot.id === action.id; // Match only by ID since ad slots don't have color or size
 
-  return state.cartItems.findIndex(sameProduct);
+  return state.cartItems.findIndex(sameAdSlot);
 };
 
-type AddProductType = {
-  product: ProductStoreType;
+type AddAdSlotType = {
+  adSlot: AdSlotStoreType;
   count: number;
 };
 
@@ -29,11 +27,11 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<AddProductType>) => {
+    addAdSlot: (state, action: PayloadAction<AddAdSlotType>) => {
       const cartItems = state.cartItems;
 
-      // find index of product
-      const index = indexSameProduct(state, action.payload.product);
+      // Find index of ad slot
+      const index = indexSameAdSlot(state, action.payload.adSlot);
 
       if (index !== -1) {
         cartItems[index].count += action.payload.count;
@@ -42,20 +40,22 @@ const cartSlice = createSlice({
 
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload.product],
+        cartItems: [...state.cartItems, action.payload.adSlot],
       };
     },
-    removeProduct(state, action: PayloadAction<ProductStoreType>) {
-      // find index of product
-      state.cartItems.splice(indexSameProduct(state, action.payload), 1);
+    removeAdSlot(state, action: PayloadAction<AdSlotStoreType>) {
+      // Find index of ad slot and remove it
+      state.cartItems.splice(indexSameAdSlot(state, action.payload), 1);
     },
-    setCount(state, action: PayloadAction<AddProductType>) {
-      // find index and add new count on product count
-      const indexItem = indexSameProduct(state, action.payload.product);
+    setCount(state, action: PayloadAction<AddAdSlotType>) {
+      // Find index and update the count for the ad slot
+      const indexItem = indexSameAdSlot(state, action.payload.adSlot);
       state.cartItems[indexItem].count = action.payload.count;
     },
   },
 });
 
-export const { addProduct, removeProduct, setCount } = cartSlice.actions;
+export const { addAdSlot, removeAdSlot, setCount } = cartSlice.actions;
 export default cartSlice.reducer;
+
+

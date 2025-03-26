@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 
-const CheckoutItems = () => {
+import { priceFormat } from "@/utils/const-function"; // Import priceFormat for formatting rates
+
+const AdSlotCheckoutItems = () => {
   const { cartItems } = useSelector((state) => state.cart);
 
   return (
@@ -13,15 +15,44 @@ const CheckoutItems = () => {
             </div>
 
             <div className="checkout-item__data">
-              <h3>{item.name}</h3>
-              <span>#{item.id}</span>
+              <h3>{item.category}</h3>
+              <span>#{item.id} | Quantity: {item.count}</span>
             </div>
           </div>
-          <h3>${item.price}</h3>
+          <h3>{priceFormat(item.rate * item.count, item.currency)}</h3>
         </li>
       ))}
     </ul>
   );
 };
 
-export default CheckoutItems;
+export default AdSlotCheckoutItems;
+
+
+// import { useSelector } from "react-redux";
+
+// const CheckoutItems = () => {
+//   const { cartItems } = useSelector((state) => state.cart);
+
+//   return (
+//     <ul className="checkout-items">
+//       {cartItems.map((item) => (
+//         <li key={item.id} className="checkout-item">
+//           <div className="checkout-item__content">
+//             <div className="checkout-item__img">
+//               <img src={item.thumb} />
+//             </div>
+
+//             <div className="checkout-item__data">
+//               <h3>{item.name}</h3>
+//               <span>#{item.id}</span>
+//             </div>
+//           </div>
+//           <h3>${item.price}</h3>
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// };
+
+// export default CheckoutItems;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import type { RootState } from "@/store";
-import { addProduct } from "@/store/reducers/cart";
+import { addProduct } from "@/store/reducers/cart2";
 import { toggleFavProduct } from "@/store/reducers/user";
 import type { ProductStoreType, ProductType } from "@/types";
 

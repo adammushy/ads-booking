@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@/store";
 import { toggleFavProduct } from "@/store/reducers/user"; // Adjust if needed
 
+import { priceFormat } from "@/utils/const-function";
+
 
 interface AdSlotItemProps {
   id: string;
@@ -51,13 +53,9 @@ const AdSlotItem: React.FC<AdSlotItemProps> = ({
           <i className="icon-heart" />
         </button>
 
-              <Link href={`/ad-slot/${id}`}>
+              <Link href={`/adSlot/${id}`}>
                   <img src={images ? images[0] : ""} alt="ads" />
-          {/* {images.length > 0 ? (
-            <img src={images[0]} alt={`${category} sample`} />
-          ) : (
-            <div className="ad-slot__image-placeholder">No Image Available</div>
-          )} */}
+        
         </Link>
       </div>
       <div className="product__description">
@@ -65,7 +63,8 @@ const AdSlotItem: React.FC<AdSlotItemProps> = ({
         {/* <p className="product__discount">{platform}</p> */}
         <div className="product__price">
           <h4>
-            {rate} {currency}
+            {/* {rate} {currency} */}
+            {priceFormat(rate, currency)}
           </h4>
         </div>
       </div>

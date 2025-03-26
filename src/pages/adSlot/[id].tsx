@@ -3,49 +3,50 @@ import { useState } from "react";
 
 import Breadcrumb from "@/components/breadcrumb";
 import Footer from "@/components/footer";
-import Content from "@/components/product-single/content";
+import AdSlotContent from "@/components/add-single/content";
 import Description from "@/components/product-single/description";
 import Gallery from "@/components/product-single/gallery";
-import Reviews from "@/components/product-single/reviews";
-import ProductsFeatured from "@/components/products-featured";
+// import Reviews from "@/components/product-single/reviews";
+import AdSlotsFeatured from "@/components/add-featured";
 // types
-import type { ProductType } from "@/types";
+import type { AdSlot } from "@/types";
 
 import Layout from "../../layouts/Main";
 import { server } from "../../utils/server";
+// import ads from "../api/ads";
 
 type ProductPageType = {
-  product: ProductType;
+  ads: AdSlot;
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const { pid } = query;
-  const res = await fetch(`${server}/api/product/${pid}`);
-  const product = await res.json();
+  const { id } = query;
+  const res = await fetch(`${server}/api/ads/${id}`);
+  const ads = await res.json();
 
 
   return {
     props: {
-      product,
+      ads,
     },
   };
 };
 
-const Product = ({ product }: ProductPageType) => {
+const Product = ({ ads }: ProductPageType) => {
 
-  // console.log("🚀 ~ Product ~ product:", product)
+//   console.log("🚀 ~ Product ~ ads:", ads)
   
   const [showBlock, setShowBlock] = useState("description");
 
   return (
     <Layout>
-      <Breadcrumb name="Product"/>
+      <Breadcrumb name="Ads"/>
 
       <section className="product-single">
         <div className="container">
           <div className="product-single__content">
-            <Gallery images={product.images} />
-            <Content product={product} />
+            <Gallery images={ads.images} />
+            <AdSlotContent adSlot={ads} />
           </div>
 
           <div className="product-single__info">
@@ -67,13 +68,14 @@ const Product = ({ product }: ProductPageType) => {
             </div>
 
             <Description show={showBlock === "description"} />
-            <Reviews product={product} show={showBlock === "reviews"} />
+            {/* <Reviews product={product} show={showBlock === "reviews"} /> */}
           </div>
         </div>
       </section>
 
       <div className="product-single-page">
-        <ProductsFeatured />
+          <AdSlotsFeatured />
+        
       </div>
       <Footer />
     </Layout>

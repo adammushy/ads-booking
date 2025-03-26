@@ -1,47 +1,48 @@
 import { useDispatch } from "react-redux";
 
-import { removeProduct, setCount } from "@/store/reducers/cart2";
-import type { ProductStoreType } from "@/types";
+import { removeAdSlot, setCount } from "@/store/reducers/cart"; // Updated actions
+import type { AdSlotStoreType } from "@/types";
+import { priceFormat } from "@/utils/const-function"; // Import priceFormat for formatting rates
 
-const ShoppingCart = ({
+const AdSlotCart = ({
   thumb,
-  name,
+  category,
   id,
-  color,
-  size,
+  platform,
   count,
-  price,
-}: ProductStoreType) => {
+  rate,
+  currency,
+}: AdSlotStoreType) => {
   const dispatch = useDispatch();
 
   const removeFromCart = () => {
     dispatch(
-      removeProduct({
+      removeAdSlot({
         thumb,
-        name,
+        category,
         id,
-        color,
-        size,
+        platform,
         count,
-        price,
+        rate,
+        currency,
       }),
     );
   };
 
-  const setProductCount = (count: number) => {
+  const setAdSlotCount = (count: number) => {
     if (count <= 0) {
       return;
     }
 
     const payload = {
-      product: {
+      adSlot: {
         thumb,
-        name,
+        category,
         id,
-        color,
-        size,
+        platform,
         count,
-        price,
+        rate,
+        currency,
       },
       count,
     };
@@ -58,22 +59,22 @@ const ShoppingCart = ({
           </div>
 
           <div className="cart-product__content">
-            <h3>{name}</h3>
+            <h3>{category}</h3>
             <p>#{id}</p>
           </div>
         </div>
       </td>
       <td className="cart-item-before" data-label="Color">
-        {color}
+        {platform} {/* Replace color with platform */}
       </td>
       <td className="cart-item-before" data-label="Size">
-        {size}
+        N/A {/* Replace size with N/A since ad slots don't have sizes */}
       </td>
       <td>
         <div className="quantity-button">
           <button
             type="button"
-            onClick={() => setProductCount(count - 1)}
+            onClick={() => setAdSlotCount(count - 1)}
             className="quantity-button__btn"
           >
             -
@@ -81,14 +82,14 @@ const ShoppingCart = ({
           <span>{count}</span>
           <button
             type="button"
-            onClick={() => setProductCount(count + 1)}
+            onClick={() => setAdSlotCount(count + 1)}
             className="quantity-button__btn"
           >
             +
           </button>
         </div>
       </td>
-      <td>${price}</td>
+      <td>{priceFormat(rate, currency)}</td> {/* Use priceFormat for rate */}
       <td className="cart-item-cancel">
         <i className="icon-cancel" onClick={() => removeFromCart()} />
       </td>
@@ -96,4 +97,4 @@ const ShoppingCart = ({
   );
 };
 
-export default ShoppingCart;
+export default AdSlotCart;

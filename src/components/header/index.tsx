@@ -69,7 +69,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
           ref={navRef}
           className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
         >
-          {/* <Link href="/products">Products</Link> */}
+          <Link href="/products">Products</Link>
           <Link href="/ads">Digital Ads </Link>
 
           <a href="#">Contact us</a>

@@ -1,4 +1,4 @@
-const Breadcrumb = () => (
+const Breadcrumb = ({name}:{name:string}) => (
   <section className="breadcrumb">
     <div className="container">
       <ul className="breadcrumb-list">
@@ -7,7 +7,7 @@ const Breadcrumb = () => (
             <i className="icon-home" />
           </a>
         </li>
-        <li>All Products</li>
+    <li>{name}</li>
       </ul>
     </div>
   </section>
