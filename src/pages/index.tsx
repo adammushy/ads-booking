@@ -13,23 +13,23 @@ const IndexPage = () => {
       <section className="featured">
         <div className="container">
           <article
-            style={{ backgroundImage: "url(/images/featured-1.jpg)" }}
+            style={{ backgroundImage: "url(/images/ads/documentary2.jpg)" }}
             className="featured-item featured-item-large"
           >
             <div className="featured-item__content">
-              <h3>New arrivals are now in!</h3>
+              <h3>A Documentary for your business</h3>
               <a href="#" className="btn btn--rounded">
-                Show Collection
+                Book now
               </a>
             </div>
           </article>
 
           <article
-            style={{ backgroundImage: "url(/images/featured-2.jpg)" }}
+            style={{ backgroundImage: "url(/images/ads/standard-banner.jpg)" }}
             className="featured-item featured-item-small-first"
           >
             <div className="featured-item__content">
-              <h3>Basic t-shirts $29,99</h3>
+              <h3>Standard Banner for event and Office</h3>
               <a href="#" className="btn btn--rounded">
                 More details
               </a>
@@ -37,11 +37,11 @@ const IndexPage = () => {
           </article>
 
           <article
-            style={{ backgroundImage: "url(/images/featured-3.jpg)" }}
+            style={{ backgroundImage: "url(/images/ads/roadblock-banner.webp)" }}
             className="featured-item featured-item-small"
           >
             <div className="featured-item__content">
-              <h3>Sale this summer</h3>
+              <h3>You want a roadblock?</h3>
               <a href="#" className="btn btn--rounded">
                 VIEW ALL
               </a>

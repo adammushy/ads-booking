@@ -40,7 +40,7 @@ const CheckoutPage = () => {
               </div>
 
               <div className="block">
-                <h3 className="block__title">Shipping information</h3>
+                <h3 className="block__title">Contact information</h3>
                 <form className="form">
                   <div className="form__input-row form__input-row--two">
                     <div className="form__col">
@@ -105,14 +105,7 @@ const CheckoutPage = () => {
                       />
                     </div>
 
-                    <div className="form__col">
-                      <div className="select-wrapper select-form">
-                        <select>
-                          <option>Country</option>
-                          <option value="Argentina">Argentina</option>
-                        </select>
-                      </div>
-                    </div>
+                   
                   </div>
                 </form>
               </div>
@@ -123,23 +116,21 @@ const CheckoutPage = () => {
                 <h3 className="block__title">Payment method</h3>
                 <ul className="round-options round-options--three">
                   <li className="round-item">
-                    <img src="/images/logos/paypal.png" alt="Paypal" />
+                    <img src="/images/logos/Mixx_Logo.png" alt="Mixx" />
                   </li>
                   <li className="round-item">
-                    <img src="/images/logos/visa.png" alt="Paypal" />
+                    <img src="/images/logos/visa.png" alt="visa" />
                   </li>
                   <li className="round-item">
-                    <img src="/images/logos/mastercard.png" alt="Paypal" />
+                    <img src="/images/logos/mastercard.png" alt="mastercard" />
                   </li>
                   <li className="round-item">
-                    <img src="/images/logos/maestro.png" alt="Paypal" />
+                    <img src="/images/logos/airtelmoney.png" alt="Airtel Money" />
                   </li>
                   <li className="round-item">
-                    <img src="/images/logos/discover.png" alt="Paypal" />
+                    <img src="/images/logos/mpesa.png" alt="M-Pesa" />
                   </li>
-                  <li className="round-item">
-                    <img src="/images/logos/ideal-logo.svg" alt="Paypal" />
-                  </li>
+                
                 </ul>
               </div>
 

@@ -13,7 +13,7 @@ export const adSlots = [
     duration: "24 Hour Maximum",
     availability: 5,
     platform: "The Mwananchi, The Citizen, Mwanaspoti, The East African",
-    images: ["/images/products/product-1.jpg"],
+    images: ["/images/ads/standard-banner.jpg","/images/ads/standard-banner.jpg","/images/ads/standard-banner.jpg"],
   },
   {
     id: "2",
@@ -27,7 +27,7 @@ export const adSlots = [
     duration: "24 Hour Maximum",
     availability: 3,
     platform: "The Mwananchi, The Citizen, Mwanaspoti, The East African",
-    images: ["/images/products/product-1.jpg"],
+    images: ["/images/ads/roadblock-banner.webp"],
   },
   {
     id: "3",
@@ -41,7 +41,7 @@ export const adSlots = [
     duration: "MW / MS / CZ",
     availability: 2,
     platform: "The Mwananchi, Mwanaspoti, The Citizen",
-    images: ["/images/products/product-1.jpg"],
+    images: ["/images/ads/stickybanner.jpg"],
   },
   {
     id: "4",
@@ -55,7 +55,7 @@ export const adSlots = [
     duration: "MW / MS / CZ",
     availability: 4,
     platform: "The Mwananchi, Mwanaspoti, The Citizen",
-    images: ["/images/products/product-3.jpg"],
+    images: ["/images/ads/stickybanner.jpg"],
   },
 
   // Sponsored Content
@@ -69,7 +69,7 @@ export const adSlots = [
     currency: "TZS",
     duration: "Permanent",
     availability: 10,
-    images: ["/images/products/product-1.jpg"],
+    images: ["/images/ads/sponsored-ad.png"],
   },
   {
     id: "6",
@@ -81,7 +81,7 @@ export const adSlots = [
     currency: "TZS",
     duration: "Permanent",
     availability: 8,
-    images: ["/images/products/product-2.jpg"],
+    images: ["/images/ads/sponsored-ad-1.jpg"],
   },
 
   // Social Media
@@ -94,7 +94,7 @@ export const adSlots = [
     currency: "TZS",
     duration: "Permanent",
     availability: 15,
-    images: ["/images/products/product-3.jpg"],
+    images: ["/images/ads/socialmedia-ad.jpg"],
   },
 
   // Live Streaming
@@ -107,7 +107,7 @@ export const adSlots = [
     currency: "TZS",
     platform: "MCL Platforms",
     availability: 5,
-    images: ["/images/products/product-4.jpg"],
+    images: ["/images/ads/livestream.jpg"],
   },
   {
     id: "9",
@@ -118,7 +118,7 @@ export const adSlots = [
     currency: "TZS",
     platform: "MCL Platforms",
     availability: 3,
-    images: ["/images/products/product-4.jpg"],
+    images: ["/images/ads/livestream.jpg"],
   },
 
   // Video Production
@@ -132,7 +132,7 @@ export const adSlots = [
     platform: "MCL YouTube Channel",
     duration: "Permanent",
     availability: 2,
-    images: ["/images/products/product-5.jpg"],
+    images: ["/images/ads/livestream.jpg",],
   },
   {
     id: "11",
@@ -144,7 +144,7 @@ export const adSlots = [
     platform: "MCL Platforms",
     duration: "Permanent",
     availability: 4,
-    images: ["/images/products/product-4.jpg"],
+    images: ["/images/ads/documentary.png"],
   },
   {
     id: "12",
@@ -156,7 +156,7 @@ export const adSlots = [
     platform: "MCL Platforms",
     duration: "Permanent",
     availability: 1,
-    images: ["/images/products/product-1.jpg"],
+    images: ["/images/ads/documentary2.jpg"],
   },
 ];
 

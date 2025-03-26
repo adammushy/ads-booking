@@ -59,7 +59,7 @@ const Footer = () => {
               <li>Information</li>
           
               <li>
-                <a href="#">Find a store</a>
+                <a href="#">Find Ads Product</a>
               </li>
               <li>
                 <a href="#">Newsletter</a>
