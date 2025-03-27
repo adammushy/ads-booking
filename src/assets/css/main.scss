@@ -226,14 +226,16 @@ h1,h2,h3,h4,h5 {
 .site-logo {
   display: flex;
   font-size: 14px;
+
   align-items: center;
   @include breakpoint(phone) {
     font-size: 16px;
+    color:black;
   }
   svg {
     width: 38px;
     height: 28px;
-    fill: currentColor;
+    fill: black;
     object-fit: contain;
     margin-right: 15px;
     @include breakpoint(phone) {
@@ -288,7 +290,7 @@ h1,h2,h3,h4,h5 {
     align-items: center;
   }
   .site-logo {
-    color: #FFF;
+    color: #000;
   }
   .site-header__btn-avatar {
     display: none;
@@ -315,7 +317,7 @@ h1,h2,h3,h4,h5 {
       }
     }
     i {
-      color: #FFF;
+      color: #000;
       z-index: 10;
       transition: all .3s ease;
       position: relative;
@@ -366,7 +368,7 @@ h1,h2,h3,h4,h5 {
       @include breakpoint(tablet-lg) {
         width: auto;
         padding: 0;
-        color: #FFF;
+        color: #000;
         margin-right: 76px;
         display: inline-block;
         font-size: 14px;
@@ -682,7 +684,7 @@ h1,h2,h3,h4,h5 {
 .featured {
   padding: 35px 0 62px 0;
   @include breakpoint(phone) {
-    padding: 70px 0 92px 0;
+    padding: 120px 0 92px 0;
   }
   .container {
     @include breakpoint(phone) {

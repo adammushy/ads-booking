@@ -66,7 +66,7 @@ const AdSlotCartPage = () => {
         </div>
 
         <div className="cart-actions">
-          <Link href="/ad-slots" className="cart__btn-back">
+          <Link href="/ads" className="cart__btn-back">
             <i className="icon-left" /> Continue Browsing
           </Link>
           <input

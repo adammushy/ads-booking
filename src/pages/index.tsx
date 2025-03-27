@@ -1,5 +1,5 @@
 import Footer from "@/components/footer";
-import PageIntro from "@/components/page-intro";
+
 import AdSlotsFeatured from "@/components/add-featured";
 
 
@@ -8,7 +8,7 @@ import Layout from "../layouts/Main";
 const IndexPage = () => {
   return (
     <Layout>
-      <PageIntro />
+      {/* <PageIntro /> */}
 
       <section className="featured">
         <div className="container">
